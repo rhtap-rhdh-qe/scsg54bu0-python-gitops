@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: scsg54bu0-python-gitops
+  description: This is GitOps manifest for scsg54bu0-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=scsg54bu0-python
+    backstage.io/kubernetes-id: scsg54bu0-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: scsg54bu0-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:scsg54bu0-python
